@@ -3,6 +3,3 @@ target/
 *.iml
 .DS_Store
 .vscode
-HomeController
-AcercaDeWebTest
-about.html
