@@ -1,5 +1,7 @@
 package madstodolistfaldaz.dto;
 
+import madstodolistfaldaz.model.Usuario;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -38,9 +40,13 @@ public class UsuarioData {
         this.nombre = nombre;
     }
 
-    public void setPassword(String password) { this.password = password; }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-    public String getPassword() { return password; }
+    public String getPassword() {
+        return password;
+    }
 
     public Date getFechaNacimiento() {
         return fechaNacimiento;
@@ -48,6 +54,16 @@ public class UsuarioData {
 
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    // Método para convertir este DTO a una entidad Usuario (modelo)
+    public Usuario toUsuario() {
+        Usuario u = new Usuario(this.email);
+        u.setId(this.id);
+        u.setNombre(this.nombre);
+        u.setPassword(this.password);
+        u.setFechaNacimiento(this.fechaNacimiento);
+        return u;
     }
 
     // Sobreescribimos equals y hashCode para que dos usuarios sean iguales

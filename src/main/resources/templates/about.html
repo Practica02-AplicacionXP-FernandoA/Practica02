@@ -4,13 +4,17 @@
 <head th:replace="fragments :: head (titulo='Acerca de')"></head>
 
 <body>
+
+<div th:if="${usuario != null}" th:replace="navBar :: navbar-authenticated"></div>
+<div th:unless="${usuario != null}" th:replace="navBar :: navbar-guest"></div>
+
 <div class="container-fluid">
     <div class="container-fluid">
         <h1>ToDoList</h1>
         <ul>
             <li>Desarrollada por Fernando Aldaz</li>
             <li>Versión 1.0.1</li>
-            <li>Fecha de release: 25/9/2023</li>
+            <li>Fecha de release: 04/06/2025</li>
         </ul>
     </div>
 
