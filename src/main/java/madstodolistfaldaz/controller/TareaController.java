@@ -34,6 +34,22 @@ public class TareaController {
             throw new UsuarioNoLogeadoException();
     }
 
+    /**
+     * Ruta simplificada para acceder a las tareas del usuario logueado
+     * Esta ruta será la que use el navbar
+     */
+    @GetMapping("/tareas")
+    public String tareas(Model model) {
+        Long idUsuarioLogeado = managerUserSession.usuarioLogeado();
+
+        if (idUsuarioLogeado == null) {
+            return "redirect:/login";
+        }
+
+        // Redirigir a la ruta completa con el ID del usuario
+        return "redirect:/usuarios/" + idUsuarioLogeado + "/tareas";
+    }
+
     @GetMapping("/usuarios/{id}/tareas/nueva")
     public String formNuevaTarea(@PathVariable(value="id") Long idUsuario,
                                  @ModelAttribute TareaData tareaData, Model model,
@@ -56,7 +72,7 @@ public class TareaController {
         tareaService.nuevaTareaUsuario(idUsuario, tareaData.getTitulo());
         flash.addFlashAttribute("mensaje", "Tarea creada correctamente");
         return "redirect:/usuarios/" + idUsuario + "/tareas";
-     }
+    }
 
     @GetMapping("/usuarios/{id}/tareas")
     public String listadoTareas(@PathVariable(value="id") Long idUsuario, Model model, HttpSession session) {
@@ -81,6 +97,9 @@ public class TareaController {
 
         comprobarUsuarioLogeado(tarea.getUsuarioId());
 
+        // Añadir información del usuario para el navbar
+        UsuarioData usuario = usuarioService.findById(tarea.getUsuarioId());
+        model.addAttribute("usuario", usuario);
         model.addAttribute("tarea", tarea);
         tareaData.setTitulo(tarea.getTitulo());
         return "formEditarTarea";
@@ -119,4 +138,3 @@ public class TareaController {
         return "";
     }
 }
-
