@@ -5,14 +5,17 @@ import madstodolistfaldaz.model.Usuario;
 import java.util.Date;
 import java.util.Objects;
 
+import java.time.LocalDate;
 // Data Transfer Object para la clase Usuario
 public class UsuarioData {
+
+
+    private Date fechaNacimiento;
 
     private Long id;
     private String email;
     private String nombre;
     private String password;
-    private Date fechaNacimiento;
 
     // Getters y setters
 

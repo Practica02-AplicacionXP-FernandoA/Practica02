@@ -2,6 +2,7 @@ package madstodolistfaldaz.controller;
 
 import madstodolistfaldaz.authentication.ManagerUserSession;
 import madstodolistfaldaz.dto.UsuarioData;
+import madstodolistfaldaz.repository.UsuarioRepository;
 import madstodolistfaldaz.service.UsuarioService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,12 @@ public class HomeControllerTest {
 
     @MockBean
     private UsuarioService usuarioService;
+
+    @Autowired
+    private HomeController homeController;
+
+    @MockBean
+    private UsuarioRepository usuarioRepository;
 
     @Test
     public void testAboutPageAuthenticated() throws Exception {
