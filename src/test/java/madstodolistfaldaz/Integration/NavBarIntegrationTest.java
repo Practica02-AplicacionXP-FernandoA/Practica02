@@ -1,7 +1,9 @@
-package madstodolistfaldaz.controller;
+package madstodolistfaldaz.Integration;
 
 import madstodolistfaldaz.authentication.ManagerUserSession;
+import madstodolistfaldaz.controller.HomeController;
 import madstodolistfaldaz.dto.UsuarioData;
+import madstodolistfaldaz.repository.UsuarioRepository;
 import madstodolistfaldaz.service.UsuarioService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class NavBarIntegrationTest {
 
     @MockBean
     private UsuarioService usuarioService;
+
+    @MockBean
+    private UsuarioRepository usuarioRepository;
 
     @Test
     public void testNavBarForAuthenticatedUser() throws Exception {
