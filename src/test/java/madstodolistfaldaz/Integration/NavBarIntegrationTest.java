@@ -1,6 +1,7 @@
-package madstodolistfaldaz.controller;
+package madstodolistfaldaz.Integration;
 
 import madstodolistfaldaz.authentication.ManagerUserSession;
+import madstodolistfaldaz.controller.HomeController;
 import madstodolistfaldaz.dto.UsuarioData;
 import madstodolistfaldaz.repository.UsuarioRepository;
 import madstodolistfaldaz.service.UsuarioService;

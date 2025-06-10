@@ -11,7 +11,6 @@ public class UsuarioData {
 
 
     private Date fechaNacimiento;
-
     private Long id;
     private String email;
     private String nombre;
