@@ -4,13 +4,13 @@
 
 ### Clases
 
-- HomeController
-- AcercaDeWebTest
-- HomeControllerTest
-- LoginControllerTest
-- DescripcionUsuarioIntegrationTest
-- NavBarIntegrationTest
-- RegistradosIntegrationTest
+- **HomeController:** Es un controlador Spring MVC que gestiona varias rutas de la aplicación relacionadas con la información general y los usuarios.
+- **AcercaDeWebTest:** Es un test de integración para el endpoint /about del controlador (HomeController).
+- **HomeControllerTest:** La clase HomeControllerTest es un conjunto de pruebas unitarias para el controlador HomeController de una aplicación Spring Boot. Utiliza MockMvc para simular peticiones HTTP y verificar las respuestas del controlador en distintos escenarios
+- **LoginControllerTest:** La clase LoginControllerTest contiene pruebas unitarias para el controlador LoginController en una aplicación Spring Boot. Utiliza MockMvc para simular peticiones HTTP y verificar el comportamiento de los endpoints relacionados con el inicio de sesión, registro y cierre de sesión.
+- **DescripcionUsuarioIntegrationTest:** La clase DescripcionUsuariosIntegrationTest es una clase de pruebas de integración para el controlador HomeController que verifica la funcionalidad relacionada con la visualización de detalles de usuarios registrados.
+- **NavBarIntegrationTest:** La clase NavBarIntegrationTest es una clase de pruebas de integración que verifica el comportamiento y la presentación de la barra de navegación (navbar) en la aplicación web, específicamente en el controlador HomeController.
+- **RegistradosIntegrationTest:** Esta clase de pruebas de integración valida el comportamiento del endpoint /registrados del controlador HomeController, que muestra la lista de usuarios registrados en la aplicación.
 
 ### Metodos
 
